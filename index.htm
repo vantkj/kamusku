@@ -5,15 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kamus Mandarin Taiwan - Indonesia</title>
 <style>
-body {background:#121212;color:#f1f1f1;font-family:"Noto Sans TC","Segoe UI",sans-serif;margin:0;padding:20px;}
-h1 {text-align:center;color:#00bcd4;margin-bottom:20px;}
-input {width:100%;padding:10px;border-radius:6px;border:none;margin-bottom:20px;font-size:16px;background:#1f1f1f;color:#f1f1f1;}
-.entry {background:#1e1e1e;padding:15px;border-radius:8px;margin-bottom:15px;box-shadow:0 2px 5px rgba(0,0,0,0.5);}
+body {
+  background:#121212;
+  color:#f1f1f1;
+  font-family:"Noto Sans TC","Segoe UI",sans-serif;
+  margin:0;
+  padding:20px;
+}
+h1 {
+  text-align:center;
+  color:#00bcd4;
+  margin-bottom:20px;
+}
+input {
+  width: calc(100% - 20px);
+  max-width:100%;
+  box-sizing: border-box;
+  padding:10px;
+  border-radius:6px;
+  border:none;
+  margin-bottom:20px;
+  font-size:16px;
+  background:#1f1f1f;
+  color:#f1f1f1;
+}
+.entry {
+  background:#1e1e1e;
+  padding:15px;
+  border-radius:8px;
+  margin-bottom:15px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.5);
+}
 .hanzi {font-size:26px;color:#ffd54f;}
 .pinyin {font-size:16px;color:#b0bec5;}
 .arti {font-size:17px;color:#fff;margin-top:5px;}
 .penjelasan,.contoh {font-size:15px;color:#ccc;margin-top:4px;}
-@media(max-width:600px){body{padding:10px}.hanzi{font-size:22px}.pinyin{font-size:14px}}
+@media(max-width:600px){
+  body{padding:10px}
+  .hanzi{font-size:22px}
+  .pinyin{font-size:14px}
+  input{font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -27,9 +59,11 @@ let filtered = [];
 let renderedCount = 0;
 const BATCH_SIZE = 20;
 
+// Map untuk menghapus nada
 const toneMap = {'ā':'a','á':'a','ǎ':'a','à':'a','ē':'e','é':'e','ě':'e','è':'e','ī':'i','í':'i','ǐ':'i','ì':'i','ō':'o','ó':'o','ǒ':'o','ò':'o','ū':'u','ú':'u','ǔ':'u','ù':'u','ǖ':'v','ǘ':'v','ǚ':'v','ǜ':'v'};
 function stripTones(pinyin){return pinyin.replace(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/g,m=>toneMap[m]).replace(/\s+/g,'');}
 
+// Render batch lazy load
 function renderBatch(){
   const container = document.getElementById("kamusList");
   const batch = filtered.slice(renderedCount, renderedCount + BATCH_SIZE);
@@ -48,11 +82,12 @@ function renderBatch(){
   renderedCount += batch.length;
 }
 
-// Load JSON
+// Load kamus.json
 fetch('kamus.json')
 .then(res=>res.json())
 .then(data=>{
   kamus = data;
+  // Urutkan A-Z berdasarkan pinyin tanpa nada
   kamus.sort((a,b)=>stripTones(a.pinyin.toLowerCase()).localeCompare(stripTones(b.pinyin.toLowerCase())));
   filtered = [...kamus];
   renderedCount = 0;
