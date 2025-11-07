@@ -36,7 +36,8 @@ input {
   margin-bottom:15px;
   box-shadow:0 2px 5px rgba(0,0,0,0.5);
 }
-.hanzi {font-size:26px;color:#ffd54f;}
+.hanzi {font-size:26px;color:#ffd54f;display:flex;align-items:center;}
+.hanzi button.tts-btn {margin-left:8px; background:none;border:none;color:#00bcd4;cursor:pointer;font-size:20px;}
 .pinyin {font-size:16px;color:#b0bec5;}
 .arti {font-size:17px;color:#fff;margin-top:5px;}
 .penjelasan,.contoh {font-size:15px;color:#ccc;margin-top:4px;}
@@ -54,6 +55,7 @@ input {
 <div id="kamusList"></div>
 
 <script>
+// Lazy load & TTS
 let kamus = [];
 let filtered = [];
 let renderedCount = 0;
@@ -63,7 +65,7 @@ const BATCH_SIZE = 20;
 const toneMap = {'ā':'a','á':'a','ǎ':'a','à':'a','ē':'e','é':'e','ě':'e','è':'e','ī':'i','í':'i','ǐ':'i','ì':'i','ō':'o','ó':'o','ǒ':'o','ò':'o','ū':'u','ú':'u','ǔ':'u','ù':'u','ǖ':'v','ǘ':'v','ǚ':'v','ǜ':'v'};
 function stripTones(pinyin){return pinyin.replace(/[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/g,m=>toneMap[m]).replace(/\s+/g,'');}
 
-// Render batch lazy load
+// Render batch
 function renderBatch(){
   const container = document.getElementById("kamusList");
   const batch = filtered.slice(renderedCount, renderedCount + BATCH_SIZE);
@@ -71,7 +73,10 @@ function renderBatch(){
     const div=document.createElement("div");
     div.className="entry";
     div.innerHTML=`
-      <div class="hanzi">${item.hanzi}</div>
+      <div class="hanzi">
+        ${item.hanzi} 
+        <button class="tts-btn" data-text="${item.hanzi}">🔊</button>
+      </div>
       <div class="pinyin">${item.pinyin}</div>
       <div class="arti">${item.arti}</div>
       <div class="penjelasan">📝 ${item.penjelasan}</div>
@@ -87,7 +92,6 @@ fetch('kamus.json')
 .then(res=>res.json())
 .then(data=>{
   kamus = data;
-  // Urutkan A-Z berdasarkan pinyin tanpa nada
   kamus.sort((a,b)=>stripTones(a.pinyin.toLowerCase()).localeCompare(stripTones(b.pinyin.toLowerCase())));
   filtered = [...kamus];
   renderedCount = 0;
@@ -111,6 +115,16 @@ document.getElementById("search").addEventListener("input",function(){
 window.addEventListener("scroll",()=>{
   if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 50){
     renderBatch();
+  }
+});
+
+// Text-to-Speech
+document.addEventListener("click", function(e){
+  if(e.target && e.target.classList.contains("tts-btn")){
+    const text = e.target.getAttribute("data-text");
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "zh-TW";
+    speechSynthesis.speak(utter);
   }
 });
 </script>
