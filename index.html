@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamus Mandarin Taiwan - Indonesia</title>
+<style>
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+        font-family: "Noto Sans TC", sans-serif;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+    h1 {
+        text-align: center;
+        color: #00bcd4;
+        margin-bottom: 20px;
+    }
+    .search-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    input[type="text"] {
+        width: 90%;
+        max-width: 500px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        background-color: #1e1e1e;
+        color: #fff;
+        box-shadow: 0 0 5px #00bcd4;
+    }
+    #kamus {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .entry {
+        background: #1e1e1e;
+        border-left: 4px solid #00bcd4;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+        transition: transform 0.2s;
+    }
+    .entry:hover {
+        transform: scale(1.02);
+    }
+    .hanzi {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+    .pinyin {
+        color: #00e5ff;
+        font-style: italic;
+    }
+    .arti {
+        color: #bdbdbd;
+        margin-top: 5px;
+    }
+    .contoh {
+        color: #a0c4ff;
+        font-size: 15px;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+<h1>📘 Kamus Mandarin Taiwan - Indonesia</h1>
+
+<div class="search-container">
+    <input type="text" id="search" placeholder="Cari Hanzi, Pinyin, atau Arti...">
+</div>
+
+<div id="kamus"></div>
+
+<script>
+const kamusData = [
+    {hanzi:"還好",pinyin:"hái hǎo",arti:"Untungnya; masih oke.",contoh:"我還好，你呢？"},
+    {hanzi:"撤掉",pinyin:"chè diào",arti:"Mencopot; menghapus sesuatu.",contoh:"他把那個標籤撤掉了。"},
+    {hanzi:"儲值",pinyin:"chǔ zhí",arti:"Top up; isi saldo.",contoh:"我明天去儲值我的卡。"},
+    {hanzi:"倒掉",pinyin:"dǎo diào",arti:"Membuang cairan.",contoh:"請把水倒掉。"},
+    {hanzi:"丟掉",pinyin:"diū diào",arti:"Membuang barang.",contoh:"不要亂丟掉垃圾。"},
+    {hanzi:"記得",pinyin:"jì dé",arti:"Ingat.",contoh:"我記得他。"},
+    {hanzi:"用過",pinyin:"yòng guò",arti:"Sudah dipakai.",contoh:"這件衣服我用過。"},
+    {hanzi:"箱子",pinyin:"xiāng zi",arti:"Kardus.",contoh:"箱子裡有書。"},
+    {hanzi:"籃子",pinyin:"lán zi",arti:"Keranjang.",contoh:"籃子裡有水果。"},
+    {hanzi:"盒子",pinyin:"hé zi",arti:"Kotak.",contoh:"桌上有一個盒子。"},
+    {hanzi:"亂七八糟",pinyin:"luàn qī bā zāo",arti:"Berantakan; kacau.",contoh:"房間亂七八糟的。"},
+    {hanzi:"懶",pinyin:"lǎn",arti:"Malas.",contoh:"他很懶，不想動。"},
+    {hanzi:"勤快",pinyin:"qín kuài",arti:"Rajin.",contoh:"她很勤快，早起工作。"},
+    {hanzi:"遠",pinyin:"yuǎn",arti:"Jauh.",contoh:"我家離公司很遠。"},
+    {hanzi:"近",pinyin:"jìn",arti:"Dekat.",contoh:"學校離這裡很近。"},
+    {hanzi:"高",pinyin:"gāo",arti:"Tinggi.",contoh:"他比我高。"},
+    {hanzi:"矮",pinyin:"ǎi",arti:"Pendek (untuk tinggi badan).",contoh:"她比我矮。"},
+    {hanzi:"熱",pinyin:"rè",arti:"Panas.",contoh:"今天很熱。"},
+    {hanzi:"冷",pinyin:"lěng",arti:"Dingin.",contoh:"外面很冷。"},
+    {hanzi:"個",pinyin:"gè",arti:"Kata satuan umum.",contoh:"一個蘋果。"},
+    {hanzi:"支",pinyin:"zhī",arti:"Kata satuan untuk benda panjang.",contoh:"一支筆。"},
+    {hanzi:"兩",pinyin:"liǎng",arti:"Dua.",contoh:"兩個人。"},
+    {hanzi:"分",pinyin:"fēn",arti:"Menit; bagian kecil.",contoh:"五分鐘。"},
+    {hanzi:"杯",pinyin:"bēi",arti:"Cangkir; gelas.",contoh:"一杯茶。"},
+    {hanzi:"片",pinyin:"piàn",arti:"Kata satuan untuk benda tipis.",contoh:"一片麵包。"},
+    {hanzi:"長",pinyin:"cháng",arti:"Panjang.",contoh:"這條路很長。"},
+    {hanzi:"短",pinyin:"duǎn",arti:"Pendek (panjang).",contoh:"這條裙子太短了。"},
+    {hanzi:"哪有",pinyin:"nǎ yǒu",arti:"Mana ada.",contoh:"哪有這麼便宜！"},
+    {hanzi:"上個月",pinyin:"shàng gè yuè",arti:"Bulan lalu.",contoh:"上個月我去台北。"},
+    {hanzi:"下個月",pinyin:"xià gè yuè",arti:"Bulan depan.",contoh:"下個月我想去日本。"},
+    {hanzi:"去年",pinyin:"qù nián",arti:"Tahun lalu.",contoh:"去年我畢業了。"},
+    {hanzi:"明年",pinyin:"míng nián",arti:"Tahun depan.",contoh:"明年我要換工作。"},
+    {hanzi:"明天",pinyin:"míng tiān",arti:"Besok.",contoh:"明天見！"},
+    {hanzi:"昨天",pinyin:"zuó tiān",arti:"Kemarin.",contoh:"昨天很忙。"},
+    {hanzi:"前天",pinyin:"qián tiān",arti:"Kemarin lusa.",contoh:"前天我休息。"},
+    {hanzi:"後天",pinyin:"hòu tiān",arti:"Besok lusa.",contoh:"後天有活動。"},
+    {hanzi:"過來",pinyin:"guò lái",arti:"Ke mari.",contoh:"快過來！"},
+    {hanzi:"過去",pinyin:"guò qù",arti:"Pergi ke sana.",contoh:"他走過去了。"},
+    {hanzi:"想過",pinyin:"xiǎng guò",arti:"Pernah terpikir.",contoh:"我想過這個問題。"},
+    {hanzi:"一點點",pinyin:"yī diǎn diǎn",arti:"Sedikit sekali.",contoh:"給我一點點糖。"},
+    {hanzi:"照片",pinyin:"zhào piàn",arti:"Foto; gambar hasil pemotretan.",contoh:"這是我最喜歡的照片。"}
+];
+
+const kamusDiv = document.getElementById("kamus");
+const searchInput = document.getElementById("search");
+
+function displayKamus(data) {
+    kamusDiv.innerHTML = "";
+    data.forEach(entry => {
+        const div = document.createElement("div");
+        div.className = "entry";
+        div.innerHTML = `
+            <div class="hanzi"></div>
+            <div class="pinyin"></div>
+            <div class="arti"></div>
+            <div class="contoh"></div>
+        `;
+        kamusDiv.appendChild(div);
+    });
+}
+
+searchInput.addEventListener("input", e => {
+    const q = e.target.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const filtered = kamusData.filter(entry =>
+        entry.hanzi.includes(q) ||
+        entry.pinyin.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(q) ||
+        entry.arti.toLowerCase().includes(q)
+    );
+    displayKamus(filtered);
+});
+
+displayKamus(kamusData);
+</script>
+
+</body>
+</html>
