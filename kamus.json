@@ -45,5 +45,38 @@
 {"hanzi":"注意","pinyin":"zhù yì","arti":"Perhatian / memperhatikan","penjelasan":"Untuk memberi peringatan atau menekankan kewaspadaan.","contoh":"注意安全！ (Zhùyì ānquán!) — Perhatikan keselamatan!"},
 {"hanzi":"主播","pinyin":"zhǔ bō","arti":"Host / penyiar live","penjelasan":"Orang yang memandu siaran langsung atau streaming.","contoh":"這個主播很受歡迎。 (Zhège zhǔbō hěn shòu huānyíng.) — Host ini sangat populer."},
 {"hanzi":"直播","pinyin":"zhí bō","arti":"Siara langsung / live streaming","penjelasan":"Kegiatan menyiarkan sesuatu secara langsung di internet.","contoh":"我們今晚有直播活動。 (Wǒmen jīnwǎn yǒu zhíbō huódòng.) — Malam ini kita ada acara live streaming."},
-{"hanzi":"關注","pinyin":"guān zhù","arti":"Mengikuti / memberi perhatian","penjelasan":"Biasanya digunakan untuk media sosial atau memperhatikan seseorang.","contoh":"請關注我的頻道。 (Qǐng guānzhù wǒ de píndào.) — Tolong ikuti channel saya."}
+{"hanzi":"關注","pinyin":"guān zhù","arti":"Mengikuti / memberi perhatian","penjelasan":"Biasanya digunakan untuk media sosial atau memperhatikan seseorang.","contoh":"請關注我的頻道。 (Qǐng guānzhù wǒ de píndào.) — Tolong ikuti channel saya."},
+  
+
+
+{"hanzi":"反正","pinyin":"fǎn zhèng","arti":"Lagipula / toh / bagaimanapun juga","penjelasan":"Kata penghubung untuk menyatakan bahwa hasilnya sama saja atau tidak ada bedanya.","contoh":"反正我已經決定了。 (Fǎnzhèng wǒ yǐjīng juédìng le.) — Lagipula saya sudah memutuskan."},
+{"hanzi":"一定","pinyin":"yī dìng","arti":"Pasti / tentu","penjelasan":"Menunjukkan kepastian atau keharusan.","contoh":"我一定會去。 (Wǒ yī dìng huì qù.) — Saya pasti akan pergi."}
+{"hanzi":"肯定","pinyin":"kěn dìng","arti":"Yakin / memastikan","penjelasan":"Menegaskan sesuatu sebagai benar atau pasti.","contoh":"我肯定他會來。 (Wǒ kěn dìng tā huì lái.) — Saya yakin dia akan datang."}
+{"hanzi":"覺得","pinyin":"jué de","arti":"Merasa / berpendapat","penjelasan":"Digunakan untuk mengekspresikan opini atau perasaan.","contoh":"我覺得很好。 (Wǒ jué de hěn hǎo.) — Saya merasa ini bagus."}
+{"hanzi":"確定","pinyin":"què dìng","arti":"Menentukan / memastikan","penjelasan":"Untuk menegaskan keputusan atau kebenaran.","contoh":"你確定要去嗎？ (Nǐ què dìng yào qù ma?) — Kamu yakin mau pergi?"}
+{"hanzi":"如果","pinyin":"rú guǒ","arti":"Jika / apabila","penjelasan":"Kata penghubung untuk kondisi.","contoh":"如果下雨，我就不去。 (Rú guǒ xià yǔ, wǒ jiù bú qù.) — Kalau hujan, saya tidak pergi."}
+{"hanzi":"然後","pinyin":"rán hòu","arti":"Lalu / kemudian","penjelasan":"Untuk menyambungkan kejadian berurutan.","contoh":"我吃飯，然後去上班。 (Wǒ chī fàn, rán hòu qù shàng bān.) — Saya makan, lalu pergi kerja."}
+{"hanzi":"以後","pinyin":"yǐ hòu","arti":"Nanti / setelah ini / di masa depan","penjelasan":"Menunjukkan waktu setelah saat ini.","contoh":"以後我會注意。 (Yǐ hòu wǒ huì zhù yì.) — Nanti saya akan memperhatikan."}
+{"hanzi":"下次","pinyin":"xià cì","arti":"Lain kali / berikutnya","penjelasan":"Menunjukkan kesempatan berikutnya.","contoh":"下次我會早點來。 (Xià cì wǒ huì zǎo diǎn lái.) — Lain kali saya akan datang lebih awal."}
+{"hanzi":"之前","pinyin":"zhī qián","arti":"Sebelumnya / sebelum","penjelasan":"Menunjukkan waktu yang telah lewat.","contoh":"我之前去過那裡。 (Wǒ zhī qián qù guò nà lǐ.) — Saya sebelumnya sudah pernah ke sana."}
+{"hanzi":"之後","pinyin":"zhī hòu","arti":"Sesudah / setelah","penjelasan":"Menunjukkan waktu setelah kejadian.","contoh":"會議之後我們去吃飯。 (Huì yì zhī hòu wǒ men qù chī fàn.) — Setelah rapat kita pergi makan."}
+{"hanzi":"以前","pinyin":"yǐ qián","arti":"Dulu / sebelumnya","penjelasan":"Menunjukkan waktu di masa lalu.","contoh":"以前我住在台北。 (Yǐ qián wǒ zhù zài Tái běi.) — Dulu saya tinggal di Taipei."}
+{"hanzi":"但是","pinyin":"dàn shì","arti":"Tetapi / namun","penjelasan":"Kata penghubung untuk menunjukkan pertentangan.","contoh":"我想去，但是沒時間。 (Wǒ xiǎng qù, dàn shì méi shí jiān.) — Saya ingin pergi, tapi tidak ada waktu."}
+{"hanzi":"可是","pinyin":"kě shì","arti":"Namun / tapi","penjelasan":"Mirip dengan 但是, menunjukkan pertentangan.","contoh":"我喜歡他，可是他不喜歡我。 (Wǒ xǐ huān tā, kě shì tā bù xǐ huān wǒ.) — Aku suka dia, tapi dia tidak suka aku."}
+{"hanzi":"比如","pinyin":"bǐ rú","arti":"Misalnya / contohnya","penjelasan":"Digunakan untuk memberikan contoh.","contoh":"我喜歡水果，比如蘋果和香蕉。 (Wǒ xǐ huān shuǐ guǒ, bǐ rú píng guǒ hé xiāng jiāo.) — Saya suka buah, misalnya apel dan pisang."}
+{"hanzi":"就是","pinyin":"jiù shì","arti":"Yaitu / memang / tepatnya","penjelasan":"Menegaskan sesuatu secara tepat atau jelas.","contoan":"他就是我朋友。 (Tā jiù shì wǒ péng yǒu.) — Dia memang teman saya."}
+{"hanzi":"好爽","pinyin":"hěn shuǎng","arti":"Sangat enak / menyenangkan","penjelasan":"Mengungkapkan perasaan lega atau nyaman.","contoh":"洗完澡好爽。 (Xǐ wán zǎo hěn shuǎng.) — Setelah mandi terasa sangat enak."}
+{"hanzi":"很爽","pinyin":"hěn shuǎng","arti":"Sangat enak / menyenangkan","penjelasan":"Sama seperti di atas, lebih umum dipakai.","contoh":"玩水很爽。 (Wán shuǐ hěn shuǎng.) — Bermain air sangat menyenangkan."}
+{"hanzi":"睡覺","pinyin":"shuì jiào","arti":"Tidur","penjelasan":"Aktivitas beristirahat dengan tidur.","contoh":"我晚上十點睡覺。 (Wǒ wǎn shàng shí diǎn shuì jiào.) — Saya tidur jam 10 malam."}
+{"hanzi":"睡著","pinyin":"shuì zháo","arti":"Tertidur / tertidur lelap","penjelasan":"Menunjukkan seseorang sudah masuk tidur.","contoh":"他已經睡著了。 (Tā yǐ jīng shuì zháo le.) — Dia sudah tertidur."}
+{"hanzi":"電腦","pinyin":"diàn nǎo","arti":"Komputer","penjelasan":"Alat elektronik untuk mengolah data dan informasi.","contoh":"我用電腦工作。 (Wǒ yòng diàn nǎo gōng zuò.) — Saya bekerja menggunakan komputer."}
+{"hanzi":"電梯","pinyin":"diàn tī","arti":"Lift / elevator","penjelasan":"Alat transportasi vertikal dalam gedung.","contoh":"我們坐電梯上樓。 (Wǒ men zuò diàn tī shàng lóu.) — Kita naik lift ke lantai atas."}
+{"hanzi":"電視","pinyin":"diàn shì","arti":"Televisi","penjelasan":"Alat untuk menonton siaran TV.","contoh":"我晚上看電視。 (Wǒ wǎn shàng kàn diàn shì.) — Saya menonton TV di malam hari."}
+{"hanzi":"電影","pinyin":"diàn yǐng","arti":"Film / bioskop","penjelasan":"Karya audio visual untuk hiburan atau pendidikan.","contoh":"我去看電影。 (Wǒ qù kàn diàn yǐng.) — Saya pergi menonton film."}
+{"hanzi":"電池","pinyin":"diàn chí","arti":"Baterai / accu","penjelasan":"Sumber energi listrik portabel.","contoh":"我的手機沒電了，要換電池。 (Wǒ de shǒu jī méi diàn le, yào huàn diàn chí.) — HP saya habis baterai, harus ganti baterai."}
+{"hanzi":"不見","pinyin":"bù jiàn","arti":"Hilang / tidak terlihat","penjelasan":"Untuk menunjukkan sesuatu tidak ada atau hilang.","contoh":"我的鑰匙不見了。 (Wǒ de yào shi bù jiàn le.) — Kunciku hilang."}
+{"hanzi":"看不到","pinyin":"kàn bù dào","arti":"Tidak bisa melihat","penjelasan":"Untuk menunjukkan objek tidak terlihat atau tersembunyi.","contoh":"我看不到遠處。 (Wǒ kàn bù dào yuǎn chù.) — Saya tidak bisa melihat jauh."}
+{"hanzi":"看不見","pinyin":"kàn bù jiàn","arti":"Tidak terlihat","penjelasan":"Mirip 看不到, menunjukkan objek tak nampak.","contoh":"天太黑，看不見路。 (Tiān tài hēi, kàn bù jiàn lù.) — Jalan tidak terlihat karena terlalu gelap."}
+{"hanzi":"找不到","pinyin":"zhǎo bù dào","arti":"Tidak bisa menemukan","penjelasan":"Menunjukkan gagal menemukan sesuatu.","contoh":"我找不到我的手機。 (Wǒ zhǎo bù dào wǒ de shǒu jī.) — Saya tidak bisa menemukan HP saya."}
+{"hanzi":"找到了","pinyin":"zhǎo dào le","arti":"Berhasil menemukan","penjelasan":"Menunjukkan berhasil menemukan sesuatu yang dicari.","contoh":"我找到了鑰匙。 (Wǒ zhǎo dào le yào shi.) — Saya menemukan kuncinya."}
 ]
